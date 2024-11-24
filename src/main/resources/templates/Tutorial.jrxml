@@ -1,0 +1,187 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Tutorial" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4a1d5eb-82dd-412f-a620-202e4bdf9dba">
+    <property name="template.engine" value="tabular_template"/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+    <property name="com.jaspersoft.studio.data.sql.tables" value="dHV0b3JpYWxzIEFTICwxMzUsNTksZDQ0ZGIyNDctNGMxNy00MTJkLWFhZGMtMjNhZmQ4N2U0YWM4&#xa;Ow=="/>
+    <style name="Table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+            <topPen lineWidth="1.0" lineColor="#000000"/>
+            <leftPen lineWidth="1.0" lineColor="#000000"/>
+            <bottomPen lineWidth="1.0" lineColor="#000000"/>
+            <rightPen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TH" mode="Transparent" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Transparent" forecolor="#B89F7D" backcolor="#70A9C6">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Transparent" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <dataset name="tableDataset" uuid="1f3c3da8-4820-4783-a3c6-07509ff56a0a">
+        <property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+        <query language="SQL"><![CDATA[SELECT title,
+	description,
+	published,
+	id
+FROM tutorials]]></query>
+        <field name="title" class="java.lang.String">
+            <property name="com.jaspersoft.studio.field.name" value="title"/>
+            <property name="com.jaspersoft.studio.field.label" value="title"/>
+            <property name="com.jaspersoft.studio.field.tree.path" value="tutorials"/>
+        </field>
+        <field name="description" class="java.lang.String">
+            <property name="com.jaspersoft.studio.field.name" value="description"/>
+            <property name="com.jaspersoft.studio.field.label" value="description"/>
+            <property name="com.jaspersoft.studio.field.tree.path" value="tutorials"/>
+        </field>
+        <field name="published" class="java.lang.String">
+            <property name="com.jaspersoft.studio.field.name" value="published"/>
+            <property name="com.jaspersoft.studio.field.label" value="published"/>
+            <property name="com.jaspersoft.studio.field.tree.path" value="tutorials"/>
+        </field>
+        <field name="id" class="java.lang.Long">
+            <property name="com.jaspersoft.studio.field.name" value="id"/>
+            <property name="com.jaspersoft.studio.field.label" value="id"/>
+            <property name="com.jaspersoft.studio.field.tree.path" value="tutorials"/>
+        </field>
+    </dataset>
+    <parameter name="@ReportName" class="java.lang.String"/>
+    <query language="sql"><![CDATA[]]></query>
+    <title height="72">
+        <element kind="frame" uuid="6321f5e3-86eb-444f-acc1-8daaaa0d6c60" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699">
+            <element kind="staticText" uuid="9e48917a-7b59-4ffd-baad-725f45563194" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" fontSize="34.0" bold="true">
+                <text><![CDATA[]]></text>
+            </element>
+            <element kind="textField" uuid="c9f772cf-9299-45d8-a275-cfb4c634a6e0" x="120" y="26" width="280" height="30" forecolor="#FAF5F5" fontSize="22.0" bold="true" hTextAlign="Center">
+                <expression><![CDATA[$P{@ReportName}]]></expression>
+            </element>
+        </element>
+    </title>
+    <pageHeader height="13"/>
+    <pageFooter height="17">
+        <element kind="textField" uuid="fed27553-a6c4-4a8a-9056-2f6f2589a3e5" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
+            <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+        </element>
+        <element kind="textField" uuid="9f5ad531-d413-49c9-874b-8b99e8150fa6" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" evaluationTime="Report">
+            <expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="fc593335-5cbf-4caf-97b3-ff897c676bde" x="0" y="4" width="100" height="13" pattern="EEEEE dd MMMMM yyyy">
+            <expression><![CDATA[new java.util.Date()]]></expression>
+        </element>
+    </pageFooter>
+    <summary height="200" splitType="Stretch">
+        <element kind="component" uuid="2151b92d-ac26-40e0-9c6d-4d269ac7091f" x="0" y="0" width="555" height="200">
+            <component kind="table">
+                <datasetRun uuid="b8cdeaf9-87aa-4222-bf84-93c4dcea1eb0" subDataset="tableDataset">
+                    <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+                </datasetRun>
+                <column kind="single" uuid="9927a1a1-e254-45f9-be2a-b15e56bf9c9e" width="90">
+                    <tableHeader height="30" style="Table_TH">
+                        <element kind="textField" uuid="348b9a87-7237-40e8-8c16-ab10efa5f5ed" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
+                            <expression><![CDATA["Header"]]></expression>
+                        </element>
+                    </tableHeader>
+                    <tableFooter height="30" style="Table_TH"/>
+                    <columnHeader height="30" style="Table_CH">
+                        <element kind="staticText" uuid="152cc2f7-28e3-427a-b158-38813b4687f9" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[title]]></text>
+                        </element>
+                    </columnHeader>
+                    <columnFooter height="30" style="Table_CH"/>
+                    <detailCell height="30" style="Table_TD">
+                        <element kind="textField" uuid="b778607b-d96f-4ee7-8d4e-8fa9c08cd5b0" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                            <expression><![CDATA[$F{title}]]></expression>
+                            <box leftPadding="2"/>
+                        </element>
+                    </detailCell>
+                </column>
+                <column kind="single" uuid="f14c0f58-2493-438c-8624-d08a5e8c5052" width="90">
+                    <tableHeader height="30" style="Table_TH">
+                        <element kind="textField" uuid="2b31d639-caa4-48ab-8ec7-054417743ef5" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
+                            <expression><![CDATA["Header"]]></expression>
+                        </element>
+                    </tableHeader>
+                    <tableFooter height="30" style="Table_TH"/>
+                    <columnHeader height="30" style="Table_CH">
+                        <element kind="staticText" uuid="a59d47fc-733e-4a63-a717-4fcd5a45966f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[description]]></text>
+                        </element>
+                    </columnHeader>
+                    <columnFooter height="30" style="Table_CH"/>
+                    <detailCell height="30" style="Table_TD">
+                        <element kind="textField" uuid="2302e66f-d2c2-4ff8-a15b-1b4ed622e89f" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                            <expression><![CDATA[$F{description}]]></expression>
+                            <box leftPadding="2"/>
+                        </element>
+                    </detailCell>
+                </column>
+                <column kind="single" uuid="6a5c942e-f089-4d33-a077-a01911cb320c" width="90">
+                    <tableHeader height="30" style="Table_TH">
+                        <element kind="textField" uuid="41407b39-cbcc-49ee-94f9-2d0ac68c2703" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
+                            <expression><![CDATA["Header"]]></expression>
+                        </element>
+                    </tableHeader>
+                    <tableFooter height="30" style="Table_TH"/>
+                    <columnHeader height="30" style="Table_CH">
+                        <element kind="staticText" uuid="ae884f51-dac8-4e9e-9210-4b309e61c8dc" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[published]]></text>
+                        </element>
+                    </columnHeader>
+                    <columnFooter height="30" style="Table_CH"/>
+                    <detailCell height="30" style="Table_TD">
+                        <element kind="textField" uuid="e6675f7b-f9e3-4758-96d7-f62bbbd8dad0" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                            <expression><![CDATA[$F{published}]]></expression>
+                            <box leftPadding="2"/>
+                        </element>
+                    </detailCell>
+                </column>
+                <column kind="single" uuid="8f2fdb05-f725-4ea2-8ad8-7bb9adce6e26" width="90">
+                    <tableHeader height="30" style="Table_TH">
+                        <element kind="textField" uuid="ee758fc6-84df-4872-8923-3a3f3cc03c11" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
+                            <expression><![CDATA["Header"]]></expression>
+                        </element>
+                    </tableHeader>
+                    <tableFooter height="30" style="Table_TH"/>
+                    <columnHeader height="30" style="Table_CH">
+                        <element kind="staticText" uuid="63261844-bbdf-4122-aed1-92dec08cbf7d" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[id]]></text>
+                        </element>
+                    </columnHeader>
+                    <columnFooter height="30" style="Table_CH"/>
+                    <detailCell height="30" style="Table_TD">
+                        <element kind="textField" uuid="fc84de6f-59e7-49e4-bc4c-aecdaffc33e5" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                            <expression><![CDATA[$F{id}]]></expression>
+                            <box leftPadding="2"/>
+                        </element>
+                    </detailCell>
+                </column>
+            </component>
+            <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+            <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+            <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+        </element>
+        <property name="local_mesure_unitheight" value="pixel"/>
+    </summary>
+</jasperReport>
