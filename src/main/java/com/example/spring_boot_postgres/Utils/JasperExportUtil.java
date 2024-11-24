@@ -30,6 +30,7 @@ public class JasperExportUtil {
                 csvExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
                 csvExporter.setExporterOutput(new SimpleWriterExporterOutput(generateFile.apply(ReportTypeEnum.CSV.toString())));
                 csvExporter.exportReport();
+                reportGenerated = true;
             }
             case XLSX -> {
                 // Export to XLSX
@@ -37,6 +38,7 @@ public class JasperExportUtil {
                 xlsxExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
                 xlsxExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(generateFile.apply(ReportTypeEnum.XLSX.toString())));
                 xlsxExporter.exportReport();
+                reportGenerated = true;
             }
             case HTML -> {
                 // Export to HTML
@@ -49,6 +51,7 @@ public class JasperExportUtil {
                 xmlExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
                 xmlExporter.setExporterOutput(new SimpleXmlExporterOutput(generateFile.apply(ReportTypeEnum.XML.toString())));
                 xmlExporter.exportReport();
+                reportGenerated = true;
             }
             case DOC -> {
                 // Export to DOCX (RTF format)
@@ -56,16 +59,13 @@ public class JasperExportUtil {
                 docxExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
                 docxExporter.setExporterOutput(new SimpleWriterExporterOutput(generateFile.apply(ReportTypeEnum.DOC.toString())));
                 docxExporter.exportReport();
-            }
-            case PDF -> {
-                JasperExportManager.exportReportToPdfFile(jasperPrint,generateFile.apply(ReportTypeEnum.PDF.toString()));
                 reportGenerated = true;
             }
             default -> {
-                // Export to PDF by default
                 JasperExportManager.exportReportToPdfFile(jasperPrint,generateFile.apply(ReportTypeEnum.PDF.toString()));
                 reportGenerated = true;
             }
+
         }
 
         return reportGenerated;

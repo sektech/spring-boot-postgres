@@ -71,10 +71,7 @@ FROM tutorials]]></query>
     <query language="sql"><![CDATA[]]></query>
     <title height="72">
         <element kind="frame" uuid="6321f5e3-86eb-444f-acc1-8daaaa0d6c60" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699">
-            <element kind="staticText" uuid="9e48917a-7b59-4ffd-baad-725f45563194" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" fontSize="34.0" bold="true">
-                <text><![CDATA[]]></text>
-            </element>
-            <element kind="textField" uuid="c9f772cf-9299-45d8-a275-cfb4c634a6e0" x="120" y="26" width="280" height="30" forecolor="#FAF5F5" fontSize="22.0" bold="true" hTextAlign="Center">
+            <element kind="textField" uuid="14f3fe33-87ef-4113-a9fb-78771cd52609" x="130" y="30" width="300" height="30" forecolor="#FFFFFF" fontSize="22.0" bold="true" hTextAlign="Center">
                 <expression><![CDATA[$P{@ReportName}]]></expression>
             </element>
         </element>
@@ -97,82 +94,58 @@ FROM tutorials]]></query>
                 <datasetRun uuid="b8cdeaf9-87aa-4222-bf84-93c4dcea1eb0" subDataset="tableDataset">
                     <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
                 </datasetRun>
-                <column kind="single" uuid="9927a1a1-e254-45f9-be2a-b15e56bf9c9e" width="90">
-                    <tableHeader height="30" style="Table_TH">
-                        <element kind="textField" uuid="348b9a87-7237-40e8-8c16-ab10efa5f5ed" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
-                            <expression><![CDATA["Header"]]></expression>
-                        </element>
-                    </tableHeader>
-                    <tableFooter height="30" style="Table_TH"/>
+                <column kind="single" uuid="8f2fdb05-f725-4ea2-8ad8-7bb9adce6e26" width="50">
                     <columnHeader height="30" style="Table_CH">
-                        <element kind="staticText" uuid="152cc2f7-28e3-427a-b158-38813b4687f9" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
-                            <text><![CDATA[title]]></text>
+                        <element kind="staticText" uuid="63261844-bbdf-4122-aed1-92dec08cbf7d" mode="Transparent" x="0" y="0" width="50" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="16.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[Id]]></text>
                         </element>
                     </columnHeader>
                     <columnFooter height="30" style="Table_CH"/>
                     <detailCell height="30" style="Table_TD">
-                        <element kind="textField" uuid="b778607b-d96f-4ee7-8d4e-8fa9c08cd5b0" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                        <element kind="textField" uuid="fc84de6f-59e7-49e4-bc4c-aecdaffc33e5" key="" x="0" y="0" width="50" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Center">
+                            <expression><![CDATA[$F{id}]]></expression>
+                            <box leftPadding="2"/>
+                        </element>
+                    </detailCell>
+                </column>
+                <column kind="single" uuid="9927a1a1-e254-45f9-be2a-b15e56bf9c9e" width="160">
+                    <columnHeader height="30" style="Table_CH">
+                        <element kind="staticText" uuid="152cc2f7-28e3-427a-b158-38813b4687f9" mode="Transparent" x="0" y="0" width="160" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="16.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[Title]]></text>
+                        </element>
+                    </columnHeader>
+                    <columnFooter height="30" style="Table_CH"/>
+                    <detailCell height="30" style="Table_TD">
+                        <element kind="textField" uuid="b778607b-d96f-4ee7-8d4e-8fa9c08cd5b0" key="" x="0" y="0" width="160" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Center">
                             <expression><![CDATA[$F{title}]]></expression>
                             <box leftPadding="2"/>
                         </element>
                     </detailCell>
                 </column>
-                <column kind="single" uuid="f14c0f58-2493-438c-8624-d08a5e8c5052" width="90">
-                    <tableHeader height="30" style="Table_TH">
-                        <element kind="textField" uuid="2b31d639-caa4-48ab-8ec7-054417743ef5" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
-                            <expression><![CDATA["Header"]]></expression>
-                        </element>
-                    </tableHeader>
-                    <tableFooter height="30" style="Table_TH"/>
+                <column kind="single" uuid="f14c0f58-2493-438c-8624-d08a5e8c5052" width="130">
                     <columnHeader height="30" style="Table_CH">
-                        <element kind="staticText" uuid="a59d47fc-733e-4a63-a717-4fcd5a45966f" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
-                            <text><![CDATA[description]]></text>
+                        <element kind="staticText" uuid="a59d47fc-733e-4a63-a717-4fcd5a45966f" mode="Transparent" x="0" y="0" width="130" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="16.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[Description]]></text>
                         </element>
                     </columnHeader>
                     <columnFooter height="30" style="Table_CH"/>
                     <detailCell height="30" style="Table_TD">
-                        <element kind="textField" uuid="2302e66f-d2c2-4ff8-a15b-1b4ed622e89f" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                        <element kind="textField" uuid="2302e66f-d2c2-4ff8-a15b-1b4ed622e89f" key="" x="0" y="0" width="130" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Center">
                             <expression><![CDATA[$F{description}]]></expression>
                             <box leftPadding="2"/>
                         </element>
                     </detailCell>
                 </column>
-                <column kind="single" uuid="6a5c942e-f089-4d33-a077-a01911cb320c" width="90">
-                    <tableHeader height="30" style="Table_TH">
-                        <element kind="textField" uuid="41407b39-cbcc-49ee-94f9-2d0ac68c2703" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
-                            <expression><![CDATA["Header"]]></expression>
-                        </element>
-                    </tableHeader>
-                    <tableFooter height="30" style="Table_TH"/>
+                <column kind="single" uuid="6a5c942e-f089-4d33-a077-a01911cb320c" width="170">
                     <columnHeader height="30" style="Table_CH">
-                        <element kind="staticText" uuid="ae884f51-dac8-4e9e-9210-4b309e61c8dc" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
-                            <text><![CDATA[published]]></text>
+                        <element kind="staticText" uuid="ae884f51-dac8-4e9e-9210-4b309e61c8dc" mode="Transparent" x="0" y="0" width="170" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="16.0" bold="true" hTextAlign="Center">
+                            <text><![CDATA[Published]]></text>
                         </element>
                     </columnHeader>
                     <columnFooter height="30" style="Table_CH"/>
                     <detailCell height="30" style="Table_TD">
-                        <element kind="textField" uuid="e6675f7b-f9e3-4758-96d7-f62bbbd8dad0" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
+                        <element kind="textField" uuid="e6675f7b-f9e3-4758-96d7-f62bbbd8dad0" key="" x="0" y="0" width="170" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Center">
                             <expression><![CDATA[$F{published}]]></expression>
-                            <box leftPadding="2"/>
-                        </element>
-                    </detailCell>
-                </column>
-                <column kind="single" uuid="8f2fdb05-f725-4ea2-8ad8-7bb9adce6e26" width="90">
-                    <tableHeader height="30" style="Table_TH">
-                        <element kind="textField" uuid="ee758fc6-84df-4872-8923-3a3f3cc03c11" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="19.0" bold="true">
-                            <expression><![CDATA["Header"]]></expression>
-                        </element>
-                    </tableHeader>
-                    <tableFooter height="30" style="Table_TH"/>
-                    <columnHeader height="30" style="Table_CH">
-                        <element kind="staticText" uuid="63261844-bbdf-4122-aed1-92dec08cbf7d" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
-                            <text><![CDATA[id]]></text>
-                        </element>
-                    </columnHeader>
-                    <columnFooter height="30" style="Table_CH"/>
-                    <detailCell height="30" style="Table_TD">
-                        <element kind="textField" uuid="fc84de6f-59e7-49e4-bc4c-aecdaffc33e5" key="" x="0" y="0" width="90" height="30" fontName="Arial" fontSize="14.0">
-                            <expression><![CDATA[$F{id}]]></expression>
                             <box leftPadding="2"/>
                         </element>
                     </detailCell>

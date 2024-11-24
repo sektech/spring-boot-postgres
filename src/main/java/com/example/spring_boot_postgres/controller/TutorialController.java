@@ -39,14 +39,31 @@ public class TutorialController {
 
 
 
-    @GetMapping("/report/{format}")
-    public ResponseEntity<String> generateJasperReport(@PathVariable("format") ReportTypeEnum format ){
+    @GetMapping("/report")
+    public ResponseEntity<String> generateJasperReport(@RequestParam("format") ReportTypeEnum format ){
         try{
             String filePath =REPORT_TEMPLATE_PATH + "Tutorial.jrxml";
             List<Tutorial> tutorials = new ArrayList<Tutorial>();
             tutorialRepository.findAll().forEach(tutorials::add);
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("ReportName", "Rejcted Report");
+            parameters.put("@ReportName", "Rejected Report");
+            JasperReport jasperReport = JasperCompileManager.compileReport(filePath);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters,dataSource.getConnection() );
+            jasperExportUtil.exportJasperReport(jasperPrint,format);
+            return  new ResponseEntity<String>("Report generated Successfully", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/report/{format}")
+    public ResponseEntity<String> generateReport_Path(@PathVariable("format") ReportTypeEnum format ){
+        try{
+            String filePath =REPORT_TEMPLATE_PATH + "Tutorial.jrxml";
+            List<Tutorial> tutorials = new ArrayList<Tutorial>();
+            tutorialRepository.findAll().forEach(tutorials::add);
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("@ReportName", "Rejected Report");
             JasperReport jasperReport = JasperCompileManager.compileReport(filePath);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters,dataSource.getConnection() );
             jasperExportUtil.exportJasperReport(jasperPrint,format);

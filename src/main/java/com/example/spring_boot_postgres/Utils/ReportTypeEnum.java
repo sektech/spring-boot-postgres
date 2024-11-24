@@ -1,6 +1,13 @@
 package com.example.spring_boot_postgres.Utils;
 
 public enum ReportTypeEnum {
+
+    PDF{
+        @Override
+        public String toString() {
+            return "pdf";
+        }
+    },
     CSV {
         @Override
         public String toString() {
@@ -26,13 +33,8 @@ public enum ReportTypeEnum {
             return "xml";
         }
     }
-    ,
-    PDF{
-        @Override
-        public String toString() {
-            return "pdf";
-        }
-    }
+
+
     ,
     DOC{
         @Override
