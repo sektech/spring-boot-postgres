@@ -42,11 +42,12 @@ public class TutorialController {
     @GetMapping("/report")
     public ResponseEntity<String> generateJasperReport(@RequestParam("format") ReportTypeEnum format ){
         try{
-            String filePath =REPORT_TEMPLATE_PATH + "Tutorial.jrxml";
+            String filePath =REPORT_TEMPLATE_PATH + "Tutorial_Format.jrxml";
             List<Tutorial> tutorials = new ArrayList<Tutorial>();
             tutorialRepository.findAll().forEach(tutorials::add);
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("@ReportName", "Rejected Report");
+            parameters.put("ReportNameParam", "Rejected Report");
+          //  parameters.put("TitleParam")
             JasperReport jasperReport = JasperCompileManager.compileReport(filePath);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters,dataSource.getConnection() );
             jasperExportUtil.exportJasperReport(jasperPrint,format);
